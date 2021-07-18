@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper" >
-    <Cart/>
     <Catalog/>
+    <Cart/>
   </div>
 </template>
 
@@ -18,4 +18,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.main-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+</style>
