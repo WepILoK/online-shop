@@ -1,11 +1,21 @@
 <template>
-  <div>
-
+  <div class="main-wrapper" >
+    <Cart/>
+    <Catalog/>
   </div>
 </template>
 
 <script>
-export default {
+import Catalog from './Catalog'
+import Cart from './Cart'
 
+export default {
+  name: 'MainWrapper',
+  components: {
+    Catalog,
+    Cart
+  }
 }
 </script>
+
+<style></style>
