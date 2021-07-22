@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$emit('addToCart', this.productData.article)
+      this.$emit('addToCart', this.productData)
     }
   }
 }

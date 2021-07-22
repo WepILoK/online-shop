@@ -3,10 +3,10 @@
     <h1>Каталог</h1>
     <div class="catalog__list">
       <CatalogItem
-      v-for="product in PRODUCTS"
-      :key="product.article"
-      :productData="product"
-      @addToCart="addToCart"/>
+          v-for="product in PRODUCTS"
+          :key="product.article"
+          :productData="product"
+          @addToCart="addToCart"/>
     </div>
   </div>
 </template>
@@ -20,9 +20,8 @@ export default {
   components: {
     CatalogItem
   },
-  data () {
-    return {
-    }
+  data() {
+    return {}
   },
   computed: {
     ...mapGetters([
@@ -31,10 +30,11 @@ export default {
   },
   methods: {
     ...mapActions([
-      'GET_PRODUCTS'
+      'GET_PRODUCTS',
+      'ADD_TO_CART'
     ]),
-    addToCart (article) {
-      console.log(article)
+    addToCart(data) {
+      this.ADD_TO_CART(data)
     }
   },
   mounted() {
@@ -50,6 +50,6 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-   }
+  }
 }
 </style>
