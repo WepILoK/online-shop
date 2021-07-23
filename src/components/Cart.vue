@@ -1,6 +1,14 @@
 <template>
   <div class="cart">
+    <router-link to="/">
+      <div class="cart__link-to-catalog link">
+        Каталог
+      </div>
+    </router-link>
     <h1>Корзина</h1>
+    <p v-if="!cartData.length">
+      В корзине нет товаров...
+    </p>
     <CartItem
         v-for="(item, index) in cartData"
         :key="item.article"
@@ -38,6 +46,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

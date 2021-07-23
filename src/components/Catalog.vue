@@ -1,5 +1,10 @@
 <template>
   <div class="catalog">
+    <router-link :to="{name: 'cart', params: {cartData: CART}}">
+      <div class="catalog__link-to-cart link">
+        Корзина: {{ CART.length }}
+      </div>
+    </router-link>
     <h1>Каталог</h1>
     <div class="catalog__list">
       <CatalogItem
@@ -25,7 +30,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'PRODUCTS'
+      'PRODUCTS',
+      'CART'
     ])
   },
   methods: {
