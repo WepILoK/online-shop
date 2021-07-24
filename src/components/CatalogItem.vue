@@ -4,7 +4,7 @@
         class="catalog-item__image"
         :src="require('../assets/images/' + productData.image)" alt="img">
     <div class="catalog-item__name">{{ productData.name }}</div>
-    <div class="catalog-item__price">Цена: {{ productData.price }} р</div>
+    <div class="catalog-item__price">Цена: {{ productData.price }} Р.</div>
     <div
         class="catalog-item__add-to-cart-btn btn"
         @click="addToCart">
@@ -26,9 +26,12 @@ export default {
   },
   methods: {
     addToCart() {
+      if(!this.productData.quantity) {
+        this.$set(this.productData, 'quantity', 1)
+      }
       this.$emit('addToCart', this.productData)
     }
-  }
+  },
 }
 </script>
 
@@ -39,12 +42,15 @@ export default {
   padding: $padding * 2;
   margin-bottom: $padding * 2;
 
-  & > div {
-    padding: 5px;
-  }
-
   &__image {
     width: 100px;
+  }
+
+  & > div {
+    padding: $padding;
+  }
+
+  &__add-to-cart-btn {
   }
 }
 </style>

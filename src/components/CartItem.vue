@@ -10,7 +10,11 @@
     </div>
     <div class="cart-item__quantity">
       <p>Кол-во: </p>
-      {{cartItemData.quantity}}
+      <span>
+        <span class="quantity__btn btn" @click="decrement">-</span>
+      {{ cartItemData.quantity }}
+        <span class="quantity__btn btn" @click="increment">+</span>
+      </span>
     </div>
     <div @click="deleteFromCart">Удалить</div>
   </div>
@@ -28,13 +32,16 @@ export default {
     }
   },
   methods: {
+    decrement() {
+      this.$emit('decrement')
+    },
+    increment() {
+      this.$emit('increment')
+    },
     deleteFromCart() {
       this.$emit('deleteFromCart')
     }
   },
-  mounted() {
-    this.$set(this.cartItemData, 'quantity', 1)
-  }
 }
 </script>
 
@@ -47,8 +54,13 @@ export default {
   box-shadow: 0 0 8px 0 #c0c0c0;
   padding: $padding * 2;
   margin-bottom: $padding * 2;
+
   &__image {
     max-width: 50px;
+  }
+
+  .quantity__btn {
+    padding: $padding $padding + 2px;
   }
 }
 </style>
