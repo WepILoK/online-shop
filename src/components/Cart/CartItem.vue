@@ -2,7 +2,7 @@
   <div class="cart-item">
     <img
         class="cart-item__image"
-        :src="require('../assets/images/' + cartItemData.image)" alt="img">
+        :src="require('@/assets/images/' + cartItemData.image)" alt="img">
     <div class="cart-item__info">
       <p>{{ cartItemData.name }}</p>
       <p>{{ cartItemData.price }}</p>
@@ -11,9 +11,11 @@
     <div class="cart-item__quantity">
       <p>Кол-во: </p>
       <span>
-        <span class="quantity__btn btn" @click="decrement">-</span>
+        <span class="quantity__btn btn"
+              @click="decrement">-</span>
       {{ cartItemData.quantity }}
-        <span class="quantity__btn btn" @click="increment">+</span>
+        <span class="quantity__btn btn"
+              @click="increment">+</span>
       </span>
     </div>
     <div @click="deleteFromCart">Удалить</div>

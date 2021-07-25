@@ -7,13 +7,13 @@ const routes = [
     {
         path: '/',
         name: 'catalog',
-        component: () => import('../components/Catalog')
+        component: () => import('../components/Catalog/Catalog')
     },
     {
         path: '/cart',
         name: 'cart',
         props: true,
-        component: () => import('../components/Cart')
+        component: () => import('../components/Cart/Cart')
     },
 ]
 

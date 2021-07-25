@@ -2,7 +2,7 @@
   <div class="catalog-item">
     <img
         class="catalog-item__image"
-        :src="require('../assets/images/' + productData.image)" alt="img">
+        :src="require('@/assets/images/' + productData.image)" alt="img">
     <div class="catalog-item__name">{{ productData.name }}</div>
     <div class="catalog-item__price">Цена: {{ productData.price }} Р.</div>
     <div
